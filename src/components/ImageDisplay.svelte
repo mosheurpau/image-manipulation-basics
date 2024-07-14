@@ -4,6 +4,10 @@
   let scale = 1;
   let grayscale = 0;
   let sepia = 0;
+  let skewX = 0;
+  let skewY = 0;
+  let perspective = 500;
+  let rotateX = 0;
 </script>
 
 <div class="flex flex-col items-center space-y-4">
@@ -13,7 +17,7 @@
       alt="LoadedImage"
       class="max-w-full h-auto w-full transform transition"
       style="
-        transform: rotate({rotate}deg) scale({scale});
+        transform: rotate({rotate}deg) scale({scale}) skew({skewX}deg, {skewY}deg) perspective({perspective}px) rotateX({rotateX}deg);
         filter: grayscale({grayscale}%) sepia({sepia}%);
       "
     />
@@ -37,6 +41,22 @@
     <label>
       Sepia:
       <input type="range" min="0" max="100" bind:value={sepia} />
+    </label>
+    <label>
+      Skew X:
+      <input type="range" min="-45" max="45" bind:value={skewX} />
+    </label>
+    <label>
+      Skew Y:
+      <input type="range" min="-45" max="45" bind:value={skewY} />
+    </label>
+    <label>
+      Perspective:
+      <input type="range" min="0" max="1000" bind:value={perspective} />
+    </label>
+    <label>
+      Rotate X (3D):
+      <input type="range" min="-180" max="180" bind:value={rotateX} />
     </label>
   </div>
 </div>
