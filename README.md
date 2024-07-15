@@ -1,38 +1,35 @@
-# create-svelte
+# Svelte Image Manipulation
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+This project is a Svelte-based web application that allows users to add, transform, and layer multiple images. Users can apply various transformations, such as rotation, scaling, skewing, and more, to individual images.
 
-## Creating a project
+## Features
 
-If you're seeing this, you've probably already done this step. Congrats!
+- **Add Images**: Add images by entering their URLs.
+- **Transform Images**: Apply transformations like rotate, scale, skew, perspective, grayscale, and sepia.
+- **Layering**: Manage the order of images using move up and move down functionality.
+- **Responsive Design**: Ensures the application is usable on various screen sizes.
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+## Usage
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+1. Enter the URL of an image in the input field and click "Add Image".
+2. Use the provided controls to transform the image.
+   - Rotate: Adjust the rotation angle of the image.
+   - Scale: Adjust the scale of the image.
+   - Grayscale: Apply a grayscale filter to the image.
+   - Sepia: Apply a sepia filter to the image.
+   - Skew X: Adjust the skew angle on the X-axis.
+   - Skew Y: Adjust the skew angle on the Y-axis.
+   - Perspective: Adjust the perspective of the image.
+   - Rotate X (3D): Adjust the rotation angle on the X-axis.
+3. Use the "Move Up" and "Move Down" buttons to change the layering order of the images.
+4. Click the "Remove" button to delete an image.
 
-## Developing
+## Code Explanation
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+The project is implemented in Svelte and uses reactive variables and components to manage the state and render the UI. Here's a brief overview of the key functions:
 
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+- **addImage**: Adds a new image to the list with initial transformation properties.
+- **removeImage**: Removes an image from the list by its ID.
+- **moveImageUp**: Moves an image up in the z-index order.
+- **moveImageDown**: Moves an image down in the z-index order.
+- **updateZIndices**: Updates the z-index of each image to reflect their order in the list.
